@@ -21,13 +21,12 @@ namespace TravMessenger
         public Form1()
         {
             InitializeComponent();
-
+            // prep the socket, UDP
             Sckt = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             Sckt.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 
             Text_Box_Local_IP.Text = GetLocalIP();
-            // Text_Box_Remote_IP.Text = GetLocalIP();
-        }
+       }
 
         private string GetLocalIP()
         {
